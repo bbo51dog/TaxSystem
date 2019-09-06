@@ -9,5 +9,6 @@ class Main extends PluginBase{
     public function onEnable(){
         $this->saveResource(Text::CONFIG_NAME);
         $config = new Config($this->getDataFolder().Text::CONFIG_NAME, Config::YAML);
+        $this->getScheduler()->scheduleRepeatingTask(new TaxTask(), 1200);
     }
 }
