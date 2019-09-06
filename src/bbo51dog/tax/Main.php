@@ -7,8 +7,10 @@ use pocketmine\utils\Config;
 
 class Main extends PluginBase{
     public function onEnable(){
-        $this->saveResource(Text::CONFIG_NAME);
-        $config = new Config($this->getDataFolder().Text::CONFIG_NAME, Config::YAML);
+        $this->saveResource("Config.yml");
+        $this->saveResource("Text.yml");
+        $config = new Config($this->getDataFolder()."Config.yml", Config::YAML);
+        $text = new Config($this->getDataFolder()."Text.yml", Config::YAML);
         $this->getScheduler()->scheduleRepeatingTask(new TaxTask(), 1200);
     }
 }
