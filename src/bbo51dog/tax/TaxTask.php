@@ -1,6 +1,6 @@
 <?php
 
-namespace bbo51dog\tax\task;
+namespace bbo51dog\tax;
 
 use pocketmine\Server;
 use pocketmine\scheduler\Task;
@@ -14,13 +14,13 @@ class TaxTask extends Task{
     /** @var int */
     private $min;
 
-    /** @var int[] */
+    /** @var string[] */
     private $time;
 
     /**
      * @param int $amount
      * @param int $min
-     * @param int[] $time
+     * @param string[] $time
      */
     public function __construct(int $amount, int $min, array $time){
         $this->amount = $amount;
@@ -29,7 +29,7 @@ class TaxTask extends Task{
     }
 
     public function onRun(int $tick){
-        if(!in_array(date("Hi"), $this->time)){
+        if(!in_array(date("H:i"), $this->time)){
             return;
         }
         $eco = EconomyAPI::getInstance();
@@ -38,7 +38,7 @@ class TaxTask extends Task{
                 return;
             }
             $eco->reduceMoney($name, $this->amount);
-            Server::getInstance()->broadcastMessage(Main::COLLECT_TAX_MESSAGE);
         }
+        Server::getInstance()->broadcastMessage(Main::COLLECT_TAX_MESSAGE);
     }
 }
