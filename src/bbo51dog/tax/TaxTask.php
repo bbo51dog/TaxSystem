@@ -10,7 +10,7 @@ class TaxTask extends Task{
     private $amount;
 
     /** @var int */
-    private $miin;
+    private $min;
 
     /** @var int[] */
     private $time;
