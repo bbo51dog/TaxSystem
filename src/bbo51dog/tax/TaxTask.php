@@ -35,7 +35,7 @@ class TaxTask extends Task{
         $eco = EconomyAPI::getInstance();
         foreach($eco->getAllMoney() as $name => $money){
             if($this->min > $money){
-                return;
+                continue;
             }
             $eco->reduceMoney($name, $this->amount);
         }
