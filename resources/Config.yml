@@ -1,0 +1,13 @@
+# Amount of tax
+amount: 10000
+
+# Minimum money which pay tax
+min: 1000
+
+# Collect tax time (type is array of string)
+# e.g.
+# midnight = 00:00
+# half past six p.m. = 18:30
+time: 
+ - 00:00
+ - 18:30
