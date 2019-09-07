@@ -1,5 +1,13 @@
+# Amount of tax
 amount: 10000
+
+# Minimum money which pay tax
 min: 1000
+
+# Collect tax time (type is array of int)
+# e.g.
+# midnight = 0000
+# half past six p.m. = 1830
 time: 
  - 0000
  - 1830
