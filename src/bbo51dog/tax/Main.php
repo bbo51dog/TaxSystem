@@ -11,6 +11,8 @@ class Main extends PluginBase{
         $this->saveResource("Text.yml");
         $config = new Config($this->getDataFolder()."Config.yml", Config::YAML);
         $text = new Config($this->getDataFolder()."Text.yml", Config::YAML);
-        $this->getScheduler()->scheduleRepeatingTask(new TaxTask(), 1200);
+        $config_data = $config->getAll();
+        $task = new TaxTask($config_data["amount"], $config_data["min"], $config_data["time"]);
+        $this->getScheduler()->scheduleRepeatingTask($task, 1200);
     }
 }
