@@ -1,6 +1,6 @@
 name: TaxSystem
 api: [3.0.0]
 main: bbo51dog\tax\Main
-version: DEVELOPING
+version: 1.0.0
 despriction: Tax System Plugin for EconomyS
 author: bbo51dog
