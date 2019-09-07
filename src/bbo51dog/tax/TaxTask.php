@@ -39,6 +39,9 @@ class TaxTask extends Task{
             }
             $eco->reduceMoney($name, $this->amount);
         }
-        Server::getInstance()->broadcastMessage(Main::COLLECT_TAX_MESSAGE);
+        $search = ["%min", "%amount", "%unit"];
+        $replace = [$this->min, $this->amount, $eco->getMonetaryUnit()];
+        $message = str_replace($search, $replace, Main::COLLECT_TAX_MESSAGE);
+        Server::getInstance()->broadcastMessage($message);
     }
 }
