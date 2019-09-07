@@ -2,6 +2,7 @@
 
 namespace bbo51dog\tax\task;
 
+use pocketmine\Server;
 use pocketmine\scheduler\Task;
 use onebone\economyapi\EconomyAPI;
 
@@ -37,6 +38,7 @@ class TaxTask extends Task{
                 return;
             }
             $eco->reduceMoney($name, $this->amount);
+            Server::getInstance()->broadcastMessage(Main::COLLECT_TAX_MESSAGE);
         }
     }
 }

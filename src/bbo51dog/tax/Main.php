@@ -6,6 +6,13 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 
 class Main extends PluginBase{
+
+    /** @var string */
+    public const PREFIX = "§l§e[§bTaxSystem§e]§r";
+
+    /** @var string */
+    public const COLLECT_TAX_MESSAGE = Main::PREFIX."§a税金を徴収しました";
+
     public function onEnable(){
         $this->saveResource("Config.yml");
         $config = new Config($this->getDataFolder()."Config.yml", Config::YAML);
