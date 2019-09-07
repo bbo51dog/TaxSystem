@@ -11,7 +11,7 @@ class Main extends PluginBase{
     public const PREFIX = "§l§e[§bTaxSystem§e]§r";
 
     /** @var string */
-    public const COLLECT_TAX_MESSAGE = Main::PREFIX."§a所持金%min以上のプレイヤーから税金%unit%amountを徴収しました";
+    public const COLLECT_TAX_MESSAGE = Main::PREFIX."§a所持金%unit%min以上のプレイヤーから税金%unit%amountを徴収しました";
 
     public function onEnable(){
         $this->saveResource("Config.yml");
